@@ -20,3 +20,12 @@ Commands to stop and restart:
 
 In Compass, connect to your db using:
 "mongodb://admin:PASSWORD@127.0.0.1:27017/?authSource=admin"
+
+To connect in python script:
+client = MongoClient(
+    host="127.0.0.1",
+    port=27017,
+    username="admin",
+    password=getpass("MongoDB password: "),
+    authSource="admin"
+)
