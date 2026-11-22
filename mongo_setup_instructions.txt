@@ -1,0 +1,22 @@
+Download Docker: "https://www.docker.com/products/docker-desktop/?utm_source=chatgpt.com"
+Install nodeJS if you don't have it already
+Download MongoDB Compass: "https://www.mongodb.com/products/tools/compass?utm_source=chatgpt.com"
+
+Inside a docker terminal, start MongoDB Communiy Server:
+> docker run -d \
+  --name mongo-local \
+  -p 127.0.0.1:27017:27017 \
+  -v mongo_local_data:/data/db \
+  -e MONGO_INITDB_ROOT_USERNAME=admin \
+  -e MONGO_INITDB_ROOT_PASSWORD='PASSWORD' \
+  mongodb/mongodb-community-server:latest-slim
+
+Check the container:
+> docker ps
+
+Commands to stop and restart:
+> docker stop mongo-local
+> docker start mongo-local
+
+In Compass, connect to your db using:
+"mongodb://admin:PASSWORD@127.0.0.1:27017/?authSource=admin"
